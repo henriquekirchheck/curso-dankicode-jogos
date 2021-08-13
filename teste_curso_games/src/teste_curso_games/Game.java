@@ -2,6 +2,7 @@ package teste_curso_games;
 
 public class Game {
 	public static void main(String[] args) {
+		/*
 		String nome = "Henrique";
 		int idade = 14;
 		double peso = 88.2;
@@ -17,19 +18,33 @@ public class Game {
 		if (nome.equals("Henrique")) {
 			System.out.println("O nome é Henrique");
 		}
-		
+		*/
+		/*
 		int contador = 1;
 		
-		/*
+		
 		while (contador <= 10) {
 			System.out.println("O numero atual é " + contador);
 			
 			contador++;
 		}
-		*/
+		
 		
 		for (int i = 0; i <= 10; i+=2) {
 			System.out.println("O numero atual é " + i);
 		}
+		*/
+		
+		Player player = new Player();
+		elfInimigo elf = new elfInimigo(10);
+		
+		player.ganharVida();
+		player.perderVida();
+		player.perderVida();
+		
+		System.out.println(player.vida);
+
+		elf.tomarDano();
+		System.out.println(elf.getVida());
 	}
 }

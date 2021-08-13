@@ -1,7 +1,7 @@
 package teste_curso_games;
 
 public class Player {
-	public int vida = 10;
+	public int vida = 100;
 	public String nome = "Guilherme";
 	
 	

@@ -1,5 +1,7 @@
 package teste_curso_games;
 
+import java.util.ArrayList;
+
 public class Game {
 	public static void main(String[] args) {
 		/*
@@ -34,7 +36,7 @@ public class Game {
 			System.out.println("O numero atual é " + i);
 		}
 		*/
-		
+		/*
 		Player player = new Player();
 		elfInimigo elf = new elfInimigo(10);
 		
@@ -46,5 +48,29 @@ public class Game {
 
 		elf.tomarDano();
 		System.out.println(elf.getVida());
+		*/
+
+		Player player = new Player();
+		ArrayList<Inimigo> inimigos = new ArrayList<Inimigo>();
+		
+		inimigos.add(new elfInimigo(100));
+		inimigos.add(new elfInimigo(100));
+		inimigos.add(new elfInimigo(100));
+		inimigos.add(new elfInimigo(100));
+		inimigos.add(new elfInimigo(100));
+
+		// inimigos.get(0).tomarDano(10);
+
+		// System.out.println(inimigos.get(0).getVida());
+
+		for (int i = 0; i < inimigos.size(); i++) {
+			Inimigo inimigoLocal = inimigos.get(i);
+			if (i == 2) {
+				inimigoLocal.tomarDano(10);
+				System.out.println(inimigoLocal.getVida());
+			} else {
+				System.out.println(inimigoLocal.getVida());
+			}
+		}
 	}
 }

@@ -10,7 +10,8 @@ import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable, KeyListener{
-    public static int WIDTH = 480, HEIGHT = 480;
+    public static int WIDTH = 640, HEIGHT = 480;
+    public static int SCALE = 3;
     public Player player;
 
     public World world;
@@ -37,8 +38,8 @@ public class Game extends Canvas implements Runnable, KeyListener{
 
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.black);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+        g.setColor(Color.green);
+        g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
 
         player.render(g);
 

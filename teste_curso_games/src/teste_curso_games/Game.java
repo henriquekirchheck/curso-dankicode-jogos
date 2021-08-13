@@ -17,5 +17,19 @@ public class Game {
 		if (nome.equals("Henrique")) {
 			System.out.println("O nome é Henrique");
 		}
+		
+		int contador = 1;
+		
+		/*
+		while (contador <= 10) {
+			System.out.println("O numero atual é " + contador);
+			
+			contador++;
+		}
+		*/
+		
+		for (int i = 0; i <= 10; i+=2) {
+			System.out.println("O numero atual é " + i);
+		}
 	}
 }

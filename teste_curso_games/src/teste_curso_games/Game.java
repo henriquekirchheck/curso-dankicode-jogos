@@ -52,6 +52,8 @@ public class Game {
 
 		Player player = new Player();
 		ArrayList<Inimigo> inimigos = new ArrayList<Inimigo>();
+
+		System.out.print(player.vida);
 		
 		inimigos.add(new elfInimigo(100));
 		inimigos.add(new elfInimigo(100));

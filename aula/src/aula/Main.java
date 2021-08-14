@@ -87,20 +87,30 @@ public class Main {
 
         // Switch e case
 
-        int vida = 30;
+        // int vida = 30;
 
-        switch (vida) {
-            case 90:
-                //Execute alguma coisa aqui
-                System.out.println("+5 velocidade");
-            break;
-            case 30:
-                System.out.println("+10 força");
-            break;
-            default:
-                System.out.println("Nada aconteceu");
-            break;
-        }
+        // switch (vida) {
+        //     case 90:
+        //         //Execute alguma coisa aqui
+        //         System.out.println("+5 velocidade");
+        //     break;
+        //     case 30:
+        //         System.out.println("+10 força");
+        //     break;
+        //     default:
+        //         System.out.println("Nada aconteceu");
+        //     break;
+        // }
+
+        // ---------------------------------------------------------------------------------------- \\ 
+        
+        // Operações Matematicas
+
+        int vida = 100;
+        int dano = 10;
+        vida = vida - dano;
+
+        System.out.println(vida);
 
         // ---------------------------------------------------------------------------------------- \\ 
     }

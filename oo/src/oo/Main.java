@@ -1,31 +1,22 @@
 package oo;
 
-public class Main extends Teste_abstract{
+public class Main implements PlayerInterface {
     public static void main(String[] args) {
-        // Player player = new Player();
-        // Player player2 = new Player();
-        // Enemy enemy = new Enemy();
-        // player.initPlayer();
-        // enemy.initEnemy();
-
-        // new Main().instanceMain2();
+        
     }
 
-    public void initGame() {
-
+    @Override
+    public void iniciar() {
+        
     }
 
-    public void chamarAbstract() {
-        this.instanceMain2();
+    @Override
+    public void morrer() {
+        
     }
 
-    public void instanceMain2(){
-        new Main2().printHelloWorld();
-    }
-
-    private class Main2{
-        public void printHelloWorld() {
-            System.out.println("Hello World!");
-        }
+    @Override
+    public void perderVida() {
+        
     }
 }

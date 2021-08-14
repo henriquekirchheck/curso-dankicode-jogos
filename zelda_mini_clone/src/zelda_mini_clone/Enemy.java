@@ -4,11 +4,12 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Enemy extends Rectangle{
 
     public int spd = 1;
-    public int right = 1, up = 0, down = 0, left = 0;
+    public int right = 0, up = 0, down = 0, left = 0;
 
     public int curAnimation = 0;
 
@@ -17,6 +18,7 @@ public class Enemy extends Rectangle{
     public static List<Bullet> bullets = new ArrayList<Bullet>();
 
     public boolean shoot = false;
+    public boolean moving = false;
 
     String direction = "down";
     public int ldir = 1;
@@ -26,29 +28,65 @@ public class Enemy extends Rectangle{
         super(x, y, 32, 32);
     }
 
-    public void tick() {
-        boolean moving = false;
-        if(right == 1 && World.isFree(x + spd, y)) {
-            x += spd;
-            moving = true;
-            direction = "right";
-            ldir = 1;
-        } else if(left == 1 && World.isFree(x - spd, y)) {
-            x -= spd;
-            moving = true;
-            direction = "left";
-            ldir = -1;
+    public void followPlayer() {
+        Player p = Game.player;
+        if(new Random().nextInt(100) < 50) {
+            if (y < p.y && World.isFree(x, y + spd)) {
+                y += spd;
+                moving = true;
+                direction = "down";
+            }
+            if (x < p.x && World.isFree(x + spd, y)) {
+                x += spd;
+                moving = true;
+                direction = "right";
+                ldir = 1;
+            }
         }
+        if(new Random().nextInt(100) < 50) {
+            if (y > p.y && World.isFree(x, y - spd)) {
+                y -= spd;
+                moving = true;
+                direction = "up";
+            } 
+            if (x > p.x && World.isFree(x - spd, y)) {
+                x -= spd;
+                moving = true;
+                direction = "left";
+                ldir = -1;
+            }
+        }
+
         
-        if(up == 1 && World.isFree(x, y - spd)) {
-            y -= spd;
-            moving = true;
-            direction = "up";
-        } else if(down == 1 && World.isFree(x, y + spd)) {
-            y += spd;
-            moving = true;
-            direction = "down";
-        }
+        
+    }
+
+    public void tick() {
+        moving = false;
+
+        followPlayer();
+        
+        // if(right == 1 && World.isFree(x + spd, y)) {
+        //     x += spd;
+        //     moving = true;
+        //     direction = "right";
+        //     ldir = 1;
+        // } else if(left == 1 && World.isFree(x - spd, y)) {
+        //     x -= spd;
+        //     moving = true;
+        //     direction = "left";
+        //     ldir = -1;
+        // }
+        
+        // if(up == 1 && World.isFree(x, y - spd)) {
+        //     y -= spd;
+        //     moving = true;
+        //     direction = "up";
+        // } else if(down == 1 && World.isFree(x, y + spd)) {
+        //     y += spd;
+        //     moving = true;
+        //     direction = "down";
+        // }
         
         if(moving) {
             curFrames++;

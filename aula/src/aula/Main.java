@@ -129,23 +129,23 @@ public class Main {
 
         // Loops
 
-        int contador = 1;
+        // int contador = 1;
 
-        while (contador <= 100) {
-            System.out.println(contador);
-            contador++;
-        }
+        // while (contador <= 100) {
+        //     System.out.println(contador);
+        //     contador++;
+        // }
         
-        for (int i = 0; i <= 100; i+=5) {
-            System.out.println(i);
-        }
+        // for (int i = 0; i <= 100; i+=5) {
+        //     System.out.println(i);
+        // }
         
-        contador = 1;
+        // contador = 1;
         
-        do {
-            System.out.println(contador);
-            contador++;
-        } while (contador <= 100);
+        // do {
+        //     System.out.println(contador);
+        //     contador++;
+        // } while (contador <= 100);
 
         // ---------------------------------------------------------------------------------------- \\ 
     }

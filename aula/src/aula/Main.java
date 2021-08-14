@@ -116,14 +116,36 @@ public class Main {
         
         // Operadores de multiplas comparações
         
-        String nomeJogador = "João";
-        int skill = 90;
+        // String nomeJogador = "João";
+        // int skill = 90;
         
-        if (nomeJogador == "Guilherme" && (skill >= 100 || skill <= 30)) {
-            System.out.println("Verdade");
-        }else {
-            System.out.println("Falso");
+        // if (nomeJogador == "Guilherme" && (skill >= 100 || skill <= 30)) {
+        //     System.out.println("Verdade");
+        // }else {
+        //     System.out.println("Falso");
+        // }
+
+        // ---------------------------------------------------------------------------------------- \\ 
+
+        // Loops
+
+        int contador = 1;
+
+        while (contador <= 100) {
+            System.out.println(contador);
+            contador++;
         }
+        
+        for (int i = 0; i <= 100; i+=5) {
+            System.out.println(i);
+        }
+        
+        contador = 1;
+        
+        do {
+            System.out.println(contador);
+            contador++;
+        } while (contador <= 100);
 
         // ---------------------------------------------------------------------------------------- \\ 
     }

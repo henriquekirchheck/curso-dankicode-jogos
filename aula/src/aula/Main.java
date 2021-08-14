@@ -106,11 +106,24 @@ public class Main {
         
         // Operações Matematicas
 
-        int vida = 100;
-        int dano = 10;
-        vida = vida - dano;
+        // int vida = 100;
+        // int dano = 10;
+        // vida = vida - dano;
 
-        System.out.println(vida);
+        // System.out.println(vida);
+
+        // ---------------------------------------------------------------------------------------- \\ 
+        
+        // Operadores de multiplas comparações
+        
+        String nomeJogador = "João";
+        int skill = 90;
+        
+        if (nomeJogador == "Guilherme" && (skill >= 100 || skill <= 30)) {
+            System.out.println("Verdade");
+        }else {
+            System.out.println("Falso");
+        }
 
         // ---------------------------------------------------------------------------------------- \\ 
     }

@@ -64,23 +64,42 @@ public class Main {
         
         // Condições
 
-        int vida = -9;
+        // int vida = -9;
 
-        if (vida == 100) {
-            System.out.println("Sua vida está cheia");
-        } else if (vida > 100) {
-            System.out.println("Sua vida está acima do limite");
-        } else if (vida < 0){
-            System.out.println("Você esta morto");
-        } else {
-            System.out.println("Sua vida é: " + vida);
-        }
+        // if (vida == 100) {
+        //     System.out.println("Sua vida está cheia");
+        // } else if (vida > 100) {
+        //     System.out.println("Sua vida está acima do limite");
+        // } else if (vida < 0){
+        //     System.out.println("Você esta morto");
+        // } else {
+        //     System.out.println("Sua vida é: " + vida);
+        // }
 
-        String nome = "João";
-        if(nome == "Henrique") {
-            System.out.println("Nome igual a Henrique");
-        } else if (nome != "Henrique") {
-            System.out.println("Seu nome não é Henrique");
+        // String nome = "João";
+        // if(nome == "Henrique") {
+        //     System.out.println("Nome igual a Henrique");
+        // } else if (nome != "Henrique") {
+        //     System.out.println("Seu nome não é Henrique");
+        // }
+
+        // ---------------------------------------------------------------------------------------- \\ 
+
+        // Switch e case
+
+        int vida = 30;
+
+        switch (vida) {
+            case 90:
+                //Execute alguma coisa aqui
+                System.out.println("+5 velocidade");
+            break;
+            case 30:
+                System.out.println("+10 força");
+            break;
+            default:
+                System.out.println("Nada aconteceu");
+            break;
         }
 
         // ---------------------------------------------------------------------------------------- \\ 

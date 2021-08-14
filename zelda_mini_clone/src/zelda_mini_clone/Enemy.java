@@ -5,10 +5,10 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player extends Rectangle{
+public class Enemy extends Rectangle{
 
-    public int spd = 4;
-    public boolean right, up, down, left;
+    public int spd = 1;
+    public int right = 1, up = 0, down = 0, left = 0;
 
     public int curAnimation = 0;
 
@@ -22,29 +22,29 @@ public class Player extends Rectangle{
     public int ldir = 1;
 
 
-    public Player(int x, int y) {
+    public Enemy(int x, int y) {
         super(x, y, 32, 32);
     }
 
     public void tick() {
         boolean moving = false;
-        if(right && World.isFree(x + spd, y)) {
+        if(right == 1 && World.isFree(x + spd, y)) {
             x += spd;
             moving = true;
             direction = "right";
             ldir = 1;
-        } else if(left && World.isFree(x - spd, y)) {
+        } else if(left == 1 && World.isFree(x - spd, y)) {
             x -= spd;
             moving = true;
             direction = "left";
             ldir = -1;
         }
         
-        if(up && World.isFree(x, y - spd)) {
+        if(up == 1 && World.isFree(x, y - spd)) {
             y -= spd;
             moving = true;
             direction = "up";
-        } else if(down && World.isFree(x, y + spd)) {
+        } else if(down == 1 && World.isFree(x, y + spd)) {
             y += spd;
             moving = true;
             direction = "down";
@@ -55,7 +55,7 @@ public class Player extends Rectangle{
             if(curFrames == targetFrames) {
                 curFrames = 0;
                 curAnimation++;
-                if(curAnimation == Spritesheet.player_front.length) {
+                if(curAnimation == Spritesheet.enemy_front.length) {
                     curAnimation = 0;
                 }
             }
@@ -71,18 +71,17 @@ public class Player extends Rectangle{
         for(int i = 0; i < bullets.size(); i++) {
             bullets.get(i).tick();
         }
-        
     }
     
     public void render(Graphics g) {
         if (direction.equals("right")) {
-            g.drawImage(Spritesheet.player_side[curAnimation], x, y, 32, 32, null);
+            g.drawImage(Spritesheet.enemy_side[curAnimation], x, y, 32, 32, null);
         } else if (direction.equals("left")) {
-            g.drawImage(Spritesheet.player_side[curAnimation], x + 32, y, -32, 32, null);
+            g.drawImage(Spritesheet.enemy_side[curAnimation], x + 32, y, -32, 32, null);
         } else if (direction.equals("up")) {
-            g.drawImage(Spritesheet.player_back[curAnimation], x, y, 32, 32, null);
+            g.drawImage(Spritesheet.enemy_front[curAnimation], x, y + 32, 32, -32, null);
         } else if (direction.equals("down")) {
-            g.drawImage(Spritesheet.player_front[curAnimation], x, y, 32, 32, null);
+            g.drawImage(Spritesheet.enemy_front[curAnimation], x, y, 32, 32, null);
         }
 
         for(int i = 0; i < bullets.size(); i++) {

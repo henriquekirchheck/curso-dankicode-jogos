@@ -10,6 +10,8 @@ public class Spritesheet {
     public static BufferedImage[] player_front;
     public static BufferedImage[] player_back;
     public static BufferedImage[] player_side;
+    public static BufferedImage[] enemy_front;
+    public static BufferedImage[] enemy_side;
     public static BufferedImage tileWall;
     public static BufferedImage bullet;
 
@@ -32,8 +34,15 @@ public class Spritesheet {
         player_back[0] = Spritesheet.getSprite(69, 11, 16, 16);
         player_back[1] = Spritesheet.getSprite(86, 11, 16, 16);
 
-        tileWall = Spritesheet.getSprite(263, 220, 16, 16);
+        enemy_front = new BufferedImage[2];
+        enemy_front[0] = Spritesheet.getSprite(0, 325, 16, 16);
+        enemy_front[1] = Spritesheet.getSprite(0, 354, 16, 16);
 
+        enemy_side = new BufferedImage[2];
+        enemy_side[0] = Spritesheet.getSprite(90, 324, 16, 16);
+        enemy_side[1] = Spritesheet.getSprite(90, 354, 16, 16);
+
+        tileWall = Spritesheet.getSprite(120, 603, 16, 16);
         bullet = Spritesheet.getSprite(191, 185, 16, 16);
     }
 

@@ -2,6 +2,9 @@ package aula;
 
 public class Main {
     public static void main(String[] args) {
+        // ---------------------------------------------------------------------------------------- \\ 
+
+        // Variaveis
 
         // int idade = 14;
         // System.out.println("Minha idade é " + idade);
@@ -59,7 +62,26 @@ public class Main {
         
         // ---------------------------------------------------------------------------------------- \\ 
         
-        //
+        // Condições
+
+        int vida = -9;
+
+        if (vida == 100) {
+            System.out.println("Sua vida está cheia");
+        } else if (vida > 100) {
+            System.out.println("Sua vida está acima do limite");
+        } else if (vida < 0){
+            System.out.println("Você esta morto");
+        } else {
+            System.out.println("Sua vida é: " + vida);
+        }
+
+        String nome = "João";
+        if(nome == "Henrique") {
+            System.out.println("Nome igual a Henrique");
+        } else if (nome != "Henrique") {
+            System.out.println("Seu nome não é Henrique");
+        }
 
         // ---------------------------------------------------------------------------------------- \\ 
     }

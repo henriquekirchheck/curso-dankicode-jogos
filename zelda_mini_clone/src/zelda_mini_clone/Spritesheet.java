@@ -11,6 +11,7 @@ public class Spritesheet {
     public static BufferedImage[] player_back;
     public static BufferedImage[] player_side;
     public static BufferedImage tileWall;
+    public static BufferedImage bullet;
 
     public Spritesheet() {
         try {
@@ -32,6 +33,8 @@ public class Spritesheet {
         player_back[1] = Spritesheet.getSprite(86, 11, 16, 16);
 
         tileWall = Spritesheet.getSprite(263, 220, 16, 16);
+
+        bullet = Spritesheet.getSprite(191, 185, 16, 16);
     }
 
     public static BufferedImage getSprite(int x, int y, int width, int height) {
